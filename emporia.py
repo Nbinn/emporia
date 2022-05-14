@@ -21,15 +21,15 @@ class Graph:
             if(len(path) == graph.length()):
                 count += 1
             return
-        # Checplace if every way starting from cell start leads to a solution or not
+        # Check if every way starting from cell start leads to a solution or not
         for w in self.graph[source]:
             # path visit each place exactly once
             if visited[w-1] == False:
                 visited[w-1] = True
                 path.append(w)
-                # checplace if adding cell w to the way leads to the solution or not
+                # check if adding cell w to the way leads to the solution or not
                 graph.findRoute(graph,w,des,path,visited)
-                #bacplacetracplace
+                #backtrack
                 visited[w-1] = False
                 path.pop()
 # check cell
