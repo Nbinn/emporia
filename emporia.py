@@ -54,6 +54,7 @@ def findPath(matrix,m ,n):
         for j in range(n):
             if(matrix[i][j] != 1):
                 # connect all adjacent place to current place if can move
+                graph.addEdge(place,place)
                 if (isSafe(i, j + 1, matrix)):
                     if(matrix[i][j+1] != 1):
                         graph.addEdge(place, place + 1)
